@@ -115,22 +115,22 @@ To create a table in HTML you would create a table with a table tag like
 While in **markdown** you would do
 
 ```markdown
-    0 | 1
-    - | -
-    0 | 0
-    0 | 1
-    1 | 0
-    1 | 1
+    10 | 20
+    -- | --
+    10 | 10
+    20 | 20
+    20 | 10
+    10 | 20
 ```
 
 And looks like
 
-0 | 1
-- | -
-0 | 0
-0 | 1
-1 | 0
-1 | 1
+10 | 20
+-- | --
+10 | 10
+20 | 20
+20 | 10
+10 | 20
 
 ### Un-ordered Lists
 
