@@ -8,7 +8,7 @@ Like HTML **markdown** is used to display data
 
 ## Why markdown?
 
-Markdown is much more simpler then HTML and much easier to remeber.
+Markdown is much more simpler then HTML and much easier to remember.
 
 ## How do you run a markdown file?
 
@@ -134,7 +134,7 @@ And looks like
 
 ### Un-ordered Lists
 
-In HTML you would make an unorderd list like
+In HTML you would make an unordered list like
 
 ```html
     <ul>
@@ -190,7 +190,7 @@ If that was translated to **markdown** it would be
         * Item Two
 ```
 
-Let's review every thing up to this point with a table without the lists, headings, Tables
+Let's review every thing up to this point with a table without the lists, headings, tables
 
 Code | Output
 ---- | ------
