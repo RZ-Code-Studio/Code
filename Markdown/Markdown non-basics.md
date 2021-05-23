@@ -34,7 +34,7 @@ In **markdown** it seems like ID's aren't allowed right?
 
 Well in **Markdown Viewer** makes the ID for each heading the text it contains.
 
-In other **markdown** processors they allow you to make custome ID's
+In other **markdown** processors they allow you to make custom ID's
 
 In HTML that would be
 
@@ -97,6 +97,13 @@ You would need to do this
     | 1 | 0 |
     | 1 | 1 |
 ```
+
+| 0 | 1 |
+| - | - |
+| 0 | 0 |
+| 0 | 1 |
+| 1 | 0 |
+| 1 | 1 |
 
 ### Inline Code Blocks
 
