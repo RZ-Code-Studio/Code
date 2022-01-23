@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guess the colour</title>
+</head>
+
+<body>
+    <guess-the-colour-app></guess-the-colour-app>
+    <script>
+        class GuessTheColourApp extends HTMLElement {
+            static getRandomIntInclusive(min, max) {
+                min = Math.ceil(min);
+                max = Math.floor(max);
+                return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
+            }
+
+            constructor() {
+                super();
+                this._root = this.attachShadow({"mode": "closed"});
+            }
+
+            connectedCallback() {
+                let style = this._root.createElement("style");
+                style.innerHTML = `
+.colourButton {
+    width: 30px;
+    height: 20px;
+    border: none;
+}
+
+.colourButton:active {
+    filter: brightness(75%);
+}`
+                this._root.head.append(style);
+
+                let result = this._root.createElement("h2");
+                result.id = "result";
+                this._root.body.append(result);
+
+                let heading = this._root.createElement("h1");
+                h1.textContent = "Guess the Colour"
+                this._root.body.append(heading);
+                
+                let btn = this._root.createElement("button")
+                btn.className = "colourButton";
+                this._root.body.append(btn);
+
+                btn = this._root.createElement("button")
+                btn.className = "colourButton";
+                this._root.body.append(btn);
+
+                btn = this._root.createElement("button")
+                btn.className = "colourButton";
+                this._root.body.append(btn);
+
+                btn = this._root.createElement("button")
+                btn.className = "colourButton";
+                this._root.body.append(btn);
+
+                btn = this._root.createElement("button")
+                btn.className = "colourButton";
+                this._root.body.append(btn);
+
+                let buttons = this._root.getElementsByClassName("colourButton");
+                let indexes = [0, 1, 2, 3, 4, 5];
+                let tmp;
+                let i;
+
+                result.innerHTML = "<br>";
+                for (i = 0; i < buttons.length - 1; i++) {
+                    tmp = getRandomIntInclusive(0, indexes.length - 1);
+                    buttons[indexes[tmp]].setAttribute("style", "background-color: rgb(" + getRandomIntInclusive(0, 255) + "," + getRandomIntInclusive(0, 255) + "," + getRandomIntInclusive(0, 255) + ");");
+                    indexes.splice(tmp, 1);
+                }
+                let correctColourButtonIndex = indexes[0];
+                buttons[correctColourButtonIndex].setAttribute("style", "background-color: rgb(" + getRandomIntInclusive(0, 255) + "," + getRandomIntInclusive(0, 255) + "," + getRandomIntInclusive(0, 255) + ");");
+                for (i = 0; i < buttons.length - 1; i++) {
+                    if (correctColourButtonIndex == i) {
+                        buttons[i].addEventListener("click", function () {
+                            result.innerHTML = "You got it correct!";
+                        });
+                    } else {
+                        buttons[i].addEventListener("click", function () {
+                            result.innerHTML = "It isn't this colour!";
+                        });
+                    }
+                }
+            }
+        }
+        
+        window.customElements.define("guess-the-colour-app", GuessTheColourApp);
+    </script>
+</body>
+
+</html>
